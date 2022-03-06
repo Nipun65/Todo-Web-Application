@@ -1,0 +1,36 @@
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>supervised_user_circle</mat-icon>
+    </button>
+    <span class="example-spacer">Todo</span>
+      <button mat-raised-button color="primary"  (click)="openDialog()" routerLinkActive="active current" type="button"  class="btn btn-success"> Add Todo </button>
+      <button mat-raised-button color="primary" onclick="history.back()">Back</button>
+  </mat-toolbar>
+  <div  class="container2" *ngIf="userTask?.length==0; else elseBlock">
+    <b> No Task for this User</b>
+</div>
+       <ng-template #elseBlock>
+       <table class="table" #elseBlock>
+            <thead>
+                <tr>
+                    <th scope="col">ID </th>
+                    <th scope="col">Task </th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let ro of userTask">
+                <td>{{ro.id}}</td>
+                <td>{{ro.task}}</td>
+                <td>{{ro.description}}</td>
+                <td>
+                    <button type="button" (click)="onedit(ro)" class="btn btn-info">Edit</button>
+                    &nbsp;
+                    <button (click)="deleteTask(ro)" class="btn btn-danger">Delete</button>
+                </td>     
+                </tr>
+            </tbody>
+        </table>
+    </ng-template>

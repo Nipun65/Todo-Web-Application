@@ -1,0 +1,21 @@
+mat-form-field
+{
+    width: 100%;
+    height: 150;
+}
+.taskid {
+    font-style: italic;
+    font-size: 70%;
+    color:red 
+  }
+
+  .task {
+    font-style: italic;
+    font-size: 70%;
+    color:red 
+  }
+  .description {
+    font-style: italic;
+    font-size: 70%;
+    color:red 
+  }

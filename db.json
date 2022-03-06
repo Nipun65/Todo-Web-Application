@@ -1,0 +1,66 @@
+{
+  "user": [
+    {
+      "firstname": "sawf sffsafas",
+      "lastname": "sfasf asfwa",
+      "email": "fsafas@g",
+      "id": 1
+    },
+    {
+      "firstname": "fdd",
+      "lastname": "sdgdsg",
+      "email": "sdgds@dfsgds",
+      "id": 2
+    },
+    {
+      "firstname": "efesf",
+      "lastname": "dsgdsg",
+      "email": "sdgfds@gdsgs",
+      "id": 3
+    }
+  ],
+  "todo": [
+    {
+      "task": "safaf asasefsef",
+      "description": "fsafsaf",
+      "userid": 1,
+      "id": 11
+    },
+    {
+      "task": "dsdgsgds",
+      "description": "dsgsg",
+      "userid": 1,
+      "id": 12
+    },
+    {
+      "task": "fgdsgdgdasg",
+      "description": "dsgsg",
+      "userid": 1,
+      "id": 13
+    },
+    {
+      "task": "dsdsgsd",
+      "description": "gdsgsds",
+      "userid": 2,
+      "id": 14
+    },
+    {
+      "task": "asfas",
+      "description": "fsaf",
+      "userid": 2,
+      "id": 16
+    },
+    {
+      "task": "safa",
+      "description": "sffsa",
+      "userid": 3,
+      "id": 17
+    },
+    {
+      "task": "safassfaf",
+      "description": "safsa",
+      "userid": 1,
+      "id": 18
+    }
+  ]
+}

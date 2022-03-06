@@ -1,0 +1,32 @@
+
+<h1 mat-dialog-title> Add User Details <h1>
+<div mat-dialog-content>
+    <form [formGroup] = "formValue">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input formControlName="firstname" matInput placeholder="First Name"  [ngClass]="{'is-invalid': formValue.controls['firstname'].touched  && formValue.controls['firstname'].invalid}" required/>
+        <div class="invalid-feedback">
+          <div class="firstname">First Name required</div>
+        </div>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input formControlName="lastname" matInput placeholder="Last Name" [ngClass]="{'is-invalid': formValue.controls['lastname'].touched && formValue.controls['lastname'].invalid}" required/>
+        <div class="invalid-feedback">
+          <div class="lastname">Last Name is required</div>
+        </div>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input formControlName="email"  matInput placeholder="Email" [ngClass]="{'is-invalid': formValue.controls['email'].touched && formValue.controls['email'].invalid}" required/>
+       <div *ngIf="!formValue.controls['email'].valid && formValue.controls['email'].touched"  class="invalid-feedback">
+         <div *ngIf="!formValue.controls['email'].valid" class="email1">Valid Email Address is required</div>
+          </div>
+      </mat-form-field>
+    </form>
+    </div>
+
+<div mat-dialog-action [align] ="'end'">
+    <button  mat-raised-button color="primary" mat-dialog-close >close </button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addUser( )">{{actionBtn}} </button>
+</div>                                                          

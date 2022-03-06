@@ -1,0 +1,55 @@
+  
+     <!DOCTYPE html>
+     <html>
+     <body>
+      
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>supervised_user_circle</mat-icon>
+    </button>
+    <span class="example-spacer">User Details</span>
+      <button mat-raised-button color="primary" routerLinkActive="active current" (click)="openDialog()" >Add User</button>
+  </mat-toolbar>
+  <div  class="container2" *ngIf="userData?.length==0; else elseBlock">
+    <b> No User </b>
+</div>
+
+<ng-template #elseBlock>
+<table class="table table-hover">
+  <thead>
+      <tr style="transform: rotate(0); " >
+          <th scope="col"><a href="#" class="stretched-link"></a>ID </th>
+          <th scope="col">First Name </th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th id= "temp" scope="col">Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let row of userData" routerlink="/todos" >
+        <td (click)="gotoHome(row.id)" >{{row.id}}</td>
+        <td (click)="gotoHome(row.id)" >{{row.firstname}}</td>
+        <td (click)="gotoHome(row.id)" >{{row.lastname}}</td>
+        <td (click)="gotoHome(row.id)" >{{row.email}}</td>
+         
+            <td>
+              <button   (click)="onedit(row)" class="btn btn-info">Edit</button>
+              &nbsp;
+              <button  (click)="deleteUser(row)" class="btn btn-danger">Delete</button>
+          </td>   
+      </tr>
+  </tbody>
+</table>
+</ng-template>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

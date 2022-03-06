@@ -1,0 +1,28 @@
+mat-form-field
+{
+    width: 100%;
+    height: 150;
+}
+.userid {
+    font-style: italic;
+    font-size: 70%;
+    color:red 
+  }
+
+  .firstname {
+    font-style: italic;
+    font-size: 70%;
+    color:red 
+  }
+  .lastname {
+    font-style: italic;
+    font-size: 70%;
+    color:red 
+  }
+
+  .email1 {
+    font-style: italic;
+    font-size: 70%;
+    color:red 
+  }
+ 
