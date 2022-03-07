@@ -16,7 +16,7 @@
 <table class="table table-hover">
   <thead>
       <tr style="transform: rotate(0); " >
-          <th scope="col"><a href="#" class="stretched-link"></a>ID </th>
+          <th scope="col"><a href="#" class="stretched-link"></a>Index</th>
           <th scope="col">First Name </th>
           <th scope="col">Last Name</th>
           <th scope="col">Email</th>
@@ -29,15 +29,35 @@
         <td (click)="gotoHome(row.id)" >{{row.firstname}}</td>
         <td (click)="gotoHome(row.id)" >{{row.lastname}}</td>
         <td (click)="gotoHome(row.id)" >{{row.email}}</td>
-         
-            <td>
+        <td>
+           
               <button   (click)="onedit(row)" class="btn btn-info">Edit</button>
               &nbsp;
-              <button  (click)="deleteUser(row)" class="btn btn-danger">Delete</button>
+              <button  (click)="deleteUser(row,deletedialog,deleteDialog1)" class="btn btn-danger">Delete</button>
+
           </td>   
       </tr>
   </tbody>
 </table>
+</ng-template>
+
+<ng-template #deletedialog>
+  <h2 matDialogTitle>Alert !</h2>
+  <mat-dialog-content>
+  <strong>You can't delete this user because user has some tasks assigned.</strong>
+  </mat-dialog-content>
+  <mat-dialog-actions align ="end">
+    <button mat-button matDialogClose color="primary">Dismiss</button>
+  </mat-dialog-actions>
+</ng-template>
+
+
+<ng-template #deleteDialog1>
+  <strong mat-dialog-title>Are you sure want to delete this user ?</strong>
+  <div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 10px" mat-raised-button color="primary"  [mat-dialog-close]="true">Delete</button>
+  </div>
 </ng-template>
 
 </body>

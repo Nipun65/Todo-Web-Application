@@ -14,23 +14,34 @@
        <table class="table" #elseBlock>
             <thead>
                 <tr>
-                    <th scope="col">ID </th>
+                    <th scope="col">Index </th>
                     <th scope="col">Task </th>
                     <th scope="col">Description</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody >
-                <tr *ngFor="let ro of userTask">
-                <td>{{ro.id}}</td>
+                <tr *ngFor="let ro of userTask; let i =index">
+                <td>{{ i+1 }}</td>
                 <td>{{ro.task}}</td>
                 <td>{{ro.description}}</td>
                 <td>
                     <button type="button" (click)="onedit(ro)" class="btn btn-info">Edit</button>
                     &nbsp;
-                    <button (click)="deleteTask(ro)" class="btn btn-danger">Delete</button>
+                    <button (click)="deleteTask(ro,deleteDialog)" class="btn btn-danger">Delete</button>
                 </td>     
                 </tr>
             </tbody>
         </table>
     </ng-template>
+
+
+
+    <ng-template #deleteDialog>
+      <strong mat-dialog-title>Are you sure want to delete this task ?</strong>
+      <div mat-dialog-action [align]="'end'">
+        <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+        <button style="margin-left: 10px" mat-raised-button color="primary" [mat-dialog-close]="true">Delete</button>
+      </div>
+    </ng-template>
+    

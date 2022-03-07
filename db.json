@@ -9,14 +9,14 @@
   ],
   "todo": [
     {
-      "task": "Todo1",
+      "task": "Todo 1",
       "description": "Todo 1",
       "userid": 1,
       "id": 1
     },
     {
-      "task": "todo-2",
-      "description": "todo-2",
+      "task": "Todo 2",
+      "description": "Todo 2",
       "userid": 1,
       "id": 2
     }

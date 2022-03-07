@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { TododialogComponent } from '../tododialog/tododialog.component';
 import {  MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,} from "@angular/material/snack-bar";
+
 
 @Component({
   selector: 'app-todo',
@@ -64,15 +65,23 @@ getAllTask(data: number)
     this.userTask = res;
   })
 }
-deleteTask(row: any)
+deleteTask(row: any,templateRef: TemplateRef<any>)
 {
     let u=0
-      if (confirm('Are you sure to delete this record ?')) {
-      this.api.deleteUser(row.id,u).subscribe(res=>{
-        this.openSnackBar("Task Deleted");
+    this.dialog
+      .open(templateRef, {
+        width: "30%",
       })
-      this.getAllTask(this.userId);
-    }
+      .afterClosed()
+      .subscribe((res) => {
+        if (res === true) {
+          this.api.deleteUser(row.id,u).subscribe(() => console.log("Task Deleted"));
+          this.getAllTask(this.userId);
+          this.openSnackBar("Task deleted successfully !");
+        }
+      });
+
+
 }
 
 onedit(row: any)

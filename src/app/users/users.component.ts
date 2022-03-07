@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, TemplateRef, } from '@angular/core';
 import { FormBuilder,FormGroup} from '@angular/forms';
 import { ApiService} from '../shared/api.service';
 import { DialogComponent} from '../dialog/dialog.component';
@@ -63,28 +63,34 @@ getAllUser()
   })
 }
 
-deleteUser(row: any)
+deleteUser(row: any,templateRef: TemplateRef<any>,templateRef1: TemplateRef<any>)
 {
   let v=1
   
-  this.api.getTask(v,row.id).subscribe(res=>{
-    
-    if(res[0])
-    {
-        this.openSnackBar("You can't delete this user");
-    }
-    else
-    {
-      if (confirm('Are you sure to delete this record ?')) {
-      this.api.deleteUser(row.id,v).subscribe(res=>{
-
-        this.openSnackBar("User Deleted");
-        this.getAllUser(); 
+  this.api.getTask(v,row.id).subscribe((res: any) => {
+    if (res[0]) {
+      this.dialog.open(templateRef, {
+        width: "35%",
+      });
+    } else {
+   
+      this.dialog
+      .open(templateRef1, {
+        width: "30%",
       })
-      }
-     
+      .afterClosed()
+      .subscribe((res) => {
+        if (res === true) {
+          this.api.deleteUser(row.id,v).subscribe(() => console.log("User Deleted"));
+          
+          this.openSnackBar("User deleted successfully !");
+          this.getAllUser();
+        }
+      });
     }
-  })
+  });
+  this.getAllUser();
+
 }
 
 onedit(row: any)
