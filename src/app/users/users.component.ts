@@ -1,13 +1,10 @@
 import { Component, OnInit, } from '@angular/core';
-import { FormBuilder,FormControl,FormGroup, Validators } from '@angular/forms';
-
-import { ApiService } from '../shared/api.service';
-import { UserModel } from './users.model';
-
-import { DialogComponent } from '../dialog/dialog.component';
-import { Router, ActivatedRoute } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarModule, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { FormBuilder,FormGroup} from '@angular/forms';
+import { ApiService} from '../shared/api.service';
+import { DialogComponent} from '../dialog/dialog.component';
+import { Router} from '@angular/router';
+import { MatDialog} from '@angular/material/dialog';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -19,7 +16,6 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarModule, MatSnack
 export class UsersComponent implements OnInit {
 
   formValue !: FormGroup; 
-  userModelObj: UserModel = new UserModel();
   userData !: any;
   horizontalPosition: MatSnackBarHorizontalPosition ="center";
   verticalPosition: MatSnackBarVerticalPosition ="bottom";

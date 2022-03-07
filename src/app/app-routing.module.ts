@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-
 import { TodoComponent } from './todo/todo.component';
 import { UsersComponent } from './users/users.component';
 

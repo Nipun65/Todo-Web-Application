@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormControl,FormGroup, Validators } from '@angular/forms';
-
+import { FormBuilder,FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
-import { TodoModel } from './todo.model';
-import { Router,ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
 import { TododialogComponent } from '../tododialog/tododialog.component';
 import {  MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,} from "@angular/material/snack-bar";
 
@@ -17,7 +14,6 @@ import {  MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,
 export class TodoComponent implements OnInit {
 
   x !: FormGroup; 
-  todoModelObj: TodoModel = new TodoModel();
   userTask !: any;
   userId!:any
   userid!: any;

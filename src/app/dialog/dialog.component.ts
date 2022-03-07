@@ -1,10 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
-
 import { ApiService } from '../shared/api.service';
-import { UserModel } from '../users/users.model';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-dialog',
@@ -14,7 +11,6 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition
 export class DialogComponent implements OnInit {
 
   formValue !: FormGroup; 
-  userModelObj: UserModel = new UserModel();
   userData !: any;
   actionBtn : string = "Add" 
   horizontalPosition: MatSnackBarHorizontalPosition ="center";
@@ -50,10 +46,7 @@ export class DialogComponent implements OnInit {
     {
      
       let v=1
-      this.userModelObj.firstname=this.formValue.value.firstname;
-      this.userModelObj.lastname=this.formValue.value.lastname;
-      this.userModelObj.email=this.formValue.value.email;
-     
+
     if(this.formValue.valid)
 {
   this.api.postUser(this.formValue.value,v)
@@ -91,7 +84,6 @@ getAllUser()
   let v=1
   this.api.getUser().subscribe(res=>{
     this.userData = res;
-    
   })
 }
 

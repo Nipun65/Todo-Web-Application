@@ -1,7 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TododialogComponent } from './tododialog.component';
-
 describe('TododialogComponent', () => {
   let component: TododialogComponent;
   let fixture: ComponentFixture<TododialogComponent>;

@@ -1,66 +1,24 @@
 {
   "user": [
     {
-      "firstname": "sawf sffsafas",
-      "lastname": "sfasf asfwa",
-      "email": "fsafas@g",
+      "firstname": "Nipun",
+      "lastname": "Patel",
+      "email": "nipun.patel@searce.com",
       "id": 1
-    },
-    {
-      "firstname": "fdd",
-      "lastname": "sdgdsg",
-      "email": "sdgds@dfsgds",
-      "id": 2
-    },
-    {
-      "firstname": "efesf",
-      "lastname": "dsgdsg",
-      "email": "sdgfds@gdsgs",
-      "id": 3
     }
   ],
   "todo": [
     {
-      "task": "safaf asasefsef",
-      "description": "fsafsaf",
+      "task": "Todo1",
+      "description": "Todo 1",
       "userid": 1,
-      "id": 11
+      "id": 1
     },
     {
-      "task": "dsdgsgds",
-      "description": "dsgsg",
+      "task": "todo-2",
+      "description": "todo-2",
       "userid": 1,
-      "id": 12
-    },
-    {
-      "task": "fgdsgdgdasg",
-      "description": "dsgsg",
-      "userid": 1,
-      "id": 13
-    },
-    {
-      "task": "dsdsgsd",
-      "description": "gdsgsds",
-      "userid": 2,
-      "id": 14
-    },
-    {
-      "task": "asfas",
-      "description": "fsaf",
-      "userid": 2,
-      "id": 16
-    },
-    {
-      "task": "safa",
-      "description": "sffsa",
-      "userid": 3,
-      "id": 17
-    },
-    {
-      "task": "safassfaf",
-      "description": "safsa",
-      "userid": 1,
-      "id": 18
+      "id": 2
     }
   ]
 }
