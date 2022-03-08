@@ -47,6 +47,7 @@ export class TododialogComponent implements OnInit {
  addTask()
   { 
 this.x.value.userid=+this.editData.userid
+
   if(!this.editData.id)
   {
 

@@ -8,4 +8,6 @@
     font-size: 30px;
     color:#4050C0
   }
- 
+  .noHover{
+    pointer-events: none;
+}

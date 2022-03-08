@@ -19,7 +19,7 @@ export class UsersComponent implements OnInit {
   userData !: any;
   horizontalPosition: MatSnackBarHorizontalPosition ="center";
   verticalPosition: MatSnackBarVerticalPosition ="bottom";
-
+  b=1
 
   displayedColumns: string[] = ['userid', 'firstname', 'lastname', 'email'];
   exform: FormGroup;
@@ -66,11 +66,14 @@ getAllUser()
 deleteUser(row: any,templateRef: TemplateRef<any>,templateRef1: TemplateRef<any>)
 {
   let v=1
-  
+  this.b=0
   this.api.getTask(v,row.id).subscribe((res: any) => {
     if (res[0]) {
       this.dialog.open(templateRef, {
         width: "35%",
+      }).afterClosed()
+      .subscribe(() => {
+        window.location.reload()
       });
     } else {
    
@@ -86,15 +89,18 @@ deleteUser(row: any,templateRef: TemplateRef<any>,templateRef1: TemplateRef<any>
           this.openSnackBar("User deleted successfully !");
           this.getAllUser();
         }
+        window.location.reload()
       });
     }
   });
+ 
   this.getAllUser();
 
 }
 
 onedit(row: any)
 {
+   this.b=0
   this.formValue.controls['firstname'].setValue(row.firstname);
   this.formValue.controls['lastname'].setValue(row.lastname);
   this.formValue.controls['email'].setValue(row.email);
@@ -107,7 +113,9 @@ this.dialog.open(DialogComponent,{
     if(val=='update')
     {
       this.getAllUser()
+     
     }
+    window.location.reload()
   })
 } 
 
